@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
     background:linear-gradient(135deg,#0d0221,#25005f,#43008c,#6a00c1,#b300ff);
@@ -17,116 +16,73 @@ body{
     color:white;
     overflow-x:hidden;
 }
-
-/* Gradient Animation */
 @keyframes gradientBG{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
-
-.container{
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-}
+.container{width:90%;max-width:1150px;margin:auto}
 
 /* HEADER */
 header{
-    width:100%;
-    padding:18px 0;
-    position:sticky;
-    top:0;
-    background:rgba(255,255,255,0.05);
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,.05);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    z-index:100;
+    border-bottom:1px solid rgba(255,255,255,.1);
 }
-nav{
-    display:flex;justify-content:space-between;align-items:center;
-}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 .logo{
     font-size:1.8rem;font-weight:800;
     background:linear-gradient(45deg,#ff00ff,#40c9ff,#ffcc00);
     -webkit-background-clip:text;color:transparent;
 }
 .nav-links a{
-    margin-left:18px;text-decoration:none;color:white;font-weight:600;
-    transition:.3s;
+    margin-left:18px;color:white;text-decoration:none;font-weight:600;
 }
-.nav-links a:hover{color:#ffcc00;}
+.nav-links a:hover{color:#ffcc00}
 
-/* Resume Button */
-.resume-btn{
-    background:linear-gradient(45deg,#ff00f7,#ff9100,#ffe600);
-    padding:10px 16px;
-    text-decoration:none;
-    border-radius:10px;
-    color:black;font-weight:700;
-    margin-left:18px;
-    box-shadow:0 0 15px rgba(255,255,255,0.4);
-}
-
-/* HERO */
-.hero{
-    padding:60px 0;
-    display:grid;grid-template-columns:1.3fr 0.7fr;
-    gap:25px;
-}
-.hero-text h1{
-    font-size:3rem;
-    font-weight:800;
-    background:linear-gradient(45deg,#ff00ff,#00eaff,#ffcd00);
-    -webkit-background-clip:text;color:transparent;
-}
-.hero-text p{
-    margin-top:18px;
-    font-size:1.1rem;
-    line-height:1.7;
-    color:#ffe9ff;
-}
-
-/* Buttons */
-.btn{
+/* BUTTONS */
+.btn,.resume-btn{
     display:inline-block;
-    margin-top:20px;
     padding:12px 20px;
-    font-weight:700;
     border-radius:12px;
+    font-weight:700;
     text-decoration:none;
     color:black;
     background:linear-gradient(45deg,#00eaff,#00ff72,#ffcc00);
-    box-shadow:0 0 18px rgba(255,255,255,0.4);
+    box-shadow:0 0 18px rgba(255,255,255,.4);
     transition:.3s;
 }
-.btn:hover{
-    transform:scale(1.05) rotate(1deg);
+.resume-btn{margin-left:18px}
+.btn:hover,.resume-btn:hover{transform:scale(1.05)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:25px;padding:60px 0}
+.hero-text h1{
+    font-size:3rem;font-weight:800;
+    background:linear-gradient(45deg,#ff00ff,#00eaff,#ffcd00);
+    -webkit-background-clip:text;color:transparent;
 }
+.hero-text p{margin-top:18px;font-size:1.1rem;color:#ffe9ff}
 
 /* INFO CARD */
 .info-card{
-    padding:20px;
-    border-radius:14px;
-    background:rgba(255,255,255,0.2);
+    padding:20px;border-radius:14px;
+    background:rgba(255,255,255,.2);
     backdrop-filter:blur(14px);
-    color:white;
-    border:1px solid rgba(255,255,255,0.3);
     animation:float 3s ease-in-out infinite;
 }
 @keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0px);}
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+    100%{transform:translateY(0)}
 }
 
-.info-card div{margin-bottom:12px;font-size:1rem}
-
-/* SECTION TITLES */
+/* SECTIONS */
 .section-title{
     margin-top:45px;
-    font-size:2rem;
-    font-weight:800;
     text-align:center;
+    font-size:2rem;font-weight:800;
     background:linear-gradient(45deg,#ff00ff,#00eaff,#ffe600);
     -webkit-background-clip:text;color:transparent;
 }
@@ -139,27 +95,8 @@ nav{
 }
 .skill-card{
     padding:20px;
-    background:rgba(255,255,255,0.25);
-    border-radius:12px;
-    backdrop-filter:blur(8px);
-    text-align:center;
-    border:1px solid rgba(255,255,255,0.3);
-    transition:.3s;
-}
-.skill-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(255,255,255,0.6);
-}
-.skill-card h3{
-    color:#ffeaff;
-    margin-bottom:10px;
-}
-.skill-card ul{
-    list-style:none;
-    padding:0;
-}
-.skill-card ul li{
-    margin:6px 0;
+    background:rgba(255,255,255,.25);
+    border-radius:12px;text-align:center;
 }
 
 /* PROJECTS */
@@ -171,50 +108,28 @@ nav{
 .project{
     padding:18px;
     border-radius:12px;
-    background:rgba(0,0,0,0.3);
-    border:1px solid rgba(255,255,255,0.25);
-    transition:.3s;
-}
-.project:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 25px rgba(255,255,0,0.7);
-}
-.project span{
-    color:#00eaff;font-size:0.9rem;
+    background:rgba(0,0,0,.3);
 }
 
 /* CONTACT */
-.contact{
-    text-align:center;
-    margin-top:40px;
-}
+.contact{text-align:center;margin-top:40px}
 .contact-box{
-    padding:25px;
-    border-radius:12px;
-    background:rgba(255,255,255,0.2);
-    backdrop-filter:blur(14px);
+    padding:25px;border-radius:12px;
+    background:rgba(255,255,255,.2);
     display:inline-block;
-    border:1px solid rgba(255,255,255,0.3);
-    margin-top:15px;
 }
 
 /* FOOTER */
-footer{
-    margin-top:40px;
-    padding:20px;
-    text-align:center;
-    color:#ffcdff;
-    font-size:0.95rem;
-}
+footer{text-align:center;margin:40px 0;color:#ffcdff}
 
-/* Responsive */
+/* RESPONSIVE */
 @media(max-width:900px){
-    .hero{grid-template-columns:1fr;}
-    .skill-grid{grid-template-columns:1fr 1fr;}
-    .project-grid{grid-template-columns:1fr;}
+    .hero{grid-template-columns:1fr}
+    .skill-grid{grid-template-columns:1fr 1fr}
+    .project-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-    .skill-grid{grid-template-columns:1fr;}
+    .skill-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -226,19 +141,17 @@ footer{
 <nav>
 <div class="logo">SabbirDev</div>
 <div class="nav-links">
-<a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 
-<!-- FIXED RESUME DOWNLOAD LINK -->
-<a class="resume-btn" 
-   href="https://raw.githubusercontent.com/AkmSabbirHossain/Resume_Of_MD_Sabbir_Hossain/master/Resume_Of_MD_Sabbir_Hossain.pdf
-" 
-   download>
-   ⬇ Resume
+<!-- WORKING RESUME LINK -->
+<a class="resume-btn"
+href="https://raw.githubusercontent.com/AkmSabbirHossain/Resume_Of_MD_Sabbir_Hossain/master/Resume_Of_MD_Sabbir_Hossain.pdf
+"
+download="Md_Sabbir_Hossain_Resume.pdf">
+⬇ Resume
 </a>
-
 </div>
 </nav>
 </div>
@@ -247,105 +160,31 @@ footer{
 <div class="container hero">
 <div class="hero-text">
 <h1>Hi, I'm <br>Md Sabbir Hossain</h1>
-<p>.NET Software Developer (C#, ASP.NET Core, Web API, Angular, React, SQL Server).  
-Skilled in modern full-stack development with clean UI, solid backend and efficient SQL.</p>
+<p>.NET Software Developer (C#, ASP.NET Core, Web API, Angular, React, SQL Server)</p>
 
 <a class="btn" href="#projects">See My Projects</a>
-
-<!-- FIXED RESUME DOWNLOAD LINK -->
-<a class="resume-btn"
-   href="https://raw.githubusercontent.com/AkmSabbirHossain/Resume_Of_MD_Sabbir_Hossain/master/Resume_Of_MD_Sabbir_Hossain.pdf"
-   download>
-   ⬇ Resume
-</a>
-
 </div>
 
 <div class="info-card">
-<div><strong>📌 Location:</strong> Dhaka, Bangladesh</div>
-<div><strong>📧 Email:</strong> sabbirhossain958629@gmail.com</div>
-<div><strong>📱 Phone:</strong> 01732-387210</div>
-<div><strong>💻 GitHub:</strong> github.com/AkmSabbirHossain</div>
+<div>📍 Dhaka, Bangladesh</div>
+<div>📧 sabbirhossain958629@gmail.com</div>
+<div>📱 01732-387210</div>
+<div>💻 github.com/AkmSabbirHossain</div>
 </div>
 </div>
 
 <h2 class="section-title" id="skills">💎 Skills</h2>
 
-<div class="container skill-grid">
-<div class="skill-card">
-<h3>Backend</h3>
-<ul>
-<li>C#, .NET Core</li>
-<li>ASP.NET Web API</li>
-<li>Entity Framework</li>
-</ul>
-</div>
+<h2 class="section-title" id="projects">🚀 Projects</h2>
 
-<div class="skill-card">
-<h3>Frontend</h3>
-<ul>
-<li>Angular</li>
-<li>React</li>
-<li>TypeScript</li>
-</ul>
-</div>
-
-<div class="skill-card">
-<h3>Database</h3>
-<ul>
-<li>MS SQL Server</li>
-<li>Triggers, Procedures</li>
-<li>DDL / DML</li>
-</ul>
-</div>
-</div>
-
-<h2 class="section-title" id="projects">🚀 Featured Projects</h2>
-
-<div class="container project-grid">
-
-<div class="project">
-<h3>E-Commerce Website</h3>
-<p>Secure login, product catalog, checkout.</p>
-<span>ASP.NET API, Angular</span>
-</div>
-
-<div class="project">
-<h3>Online Book Shop</h3>
-<p>MVC CRUD operations with EF Core.</p>
-<span>ASP.NET MVC</span>
-</div>
-
-<div class="project">
-<h3>Weather App</h3>
-<p>Displays real-time weather using APIs.</p>
-<span>C#, Web API</span>
-</div>
-
-<div class="project">
-<h3>Hospital System</h3>
-<p>Patient management with EF + Razor.</p>
-<span>ASP.NET</span>
-</div>
-
-</div>
-
-<h2 class="section-title" id="contact">📬 Contact Me</h2>
-
-<div class="contact">
-<div class="contact-box">
-<p><strong>Email:</strong> sabbirhossain958629@gmail.com</p>
-<p><strong>Phone:</strong> 01732-387210</p>
-<p><strong>Address:</strong> Mirpur-13, Dhaka</p>
-</div>
-</div>
+<h2 class="section-title" id="contact">📬 Contact</h2>
 
 <footer>
-© <span id="year"></span> Md Sabbir Hossain — Portfolio  
+© <span id="year"></span> Md Sabbir Hossain
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 
 </body>
